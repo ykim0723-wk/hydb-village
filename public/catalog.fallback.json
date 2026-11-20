@@ -1,0 +1,250 @@
+{
+ "store": "https://haveyoudiedbefore.online",
+ "products": [
+  {
+   "id": "blackwater-waxed-barrel-denim",
+   "name": "Blackwater Waxed Barrel Denim",
+   "price": "$150",
+   "cat": "clothing",
+   "slot": "bottom",
+   "tee": false,
+   "img": "https://cdn.shopify.com/s/files/1/0622/5503/8681/files/1_89e2bd7d-c123-483b-a8a2-7d46d02f33c5.png?v=1781299995",
+   "handle": "blackwater-waxed-barrel-denim",
+   "available": true
+  },
+  {
+   "id": "industry-denim",
+   "name": "Industry Denim",
+   "price": "$150",
+   "cat": "clothing",
+   "slot": "bottom",
+   "tee": false,
+   "img": "https://cdn.shopify.com/s/files/1/0622/5503/8681/files/1_6f3730b0-eb51-43eb-918f-511bbb482d87.png?v=1781300434",
+   "handle": "industry-denim",
+   "available": true
+  },
+  {
+   "id": "poka-dnx-skull-hoodie",
+   "name": "Poka DNX Skull Hoodie",
+   "price": "$75",
+   "cat": "clothing",
+   "slot": "top",
+   "tee": false,
+   "img": "https://cdn.shopify.com/s/files/1/0622/5503/8681/files/1_e8f8439c-cef8-4620-b791-733a6d39923f.png?v=1780717496",
+   "handle": "poka-dnx-skull-hoodie",
+   "available": true
+  },
+  {
+   "id": "dustfall-grove-denim",
+   "name": "Dustfall Grove Denim",
+   "price": "$150",
+   "cat": "clothing",
+   "slot": "bottom",
+   "tee": false,
+   "img": "https://cdn.shopify.com/s/files/1/0622/5503/8681/files/1_de173831-7d28-4d56-8b6a-50106c241c85.png?v=1780717276",
+   "handle": "dustfall-grove-denim",
+   "available": true
+  },
+  {
+   "id": "exmilitant-convertible-cargo",
+   "name": "Exmilitant Convertible Cargo",
+   "price": "$165",
+   "cat": "clothing",
+   "slot": "bottom",
+   "tee": false,
+   "img": "https://cdn.shopify.com/s/files/1/0622/5503/8681/files/1_861c8c49-b0e6-48eb-a441-cddd140da7fc.png?v=1780716959",
+   "handle": "exmilitant-convertible-cargo",
+   "available": true
+  },
+  {
+   "id": "creek-gritwashed-denim",
+   "name": "Creek Gritwashed Denim",
+   "price": "$130",
+   "cat": "clothing",
+   "slot": "bottom",
+   "tee": false,
+   "img": "https://cdn.shopify.com/s/files/1/0622/5503/8681/files/IMG_2859.jpg?v=1763248343",
+   "handle": "creek-gritwashed-denim",
+   "available": true
+  },
+  {
+   "id": "ritual-hoodie",
+   "name": "Ritual Hoodie",
+   "price": "$150",
+   "cat": "clothing",
+   "slot": "top",
+   "tee": false,
+   "img": "https://cdn.shopify.com/s/files/1/0622/5503/8681/files/5.2.jpg?v=1763248893",
+   "handle": "ritual-hoodie",
+   "available": true
+  },
+  {
+   "id": "great-neck-cathedral-parachutes",
+   "name": "Great Neck Cathedral Parachutes",
+   "price": "$125",
+   "cat": "clothing",
+   "slot": "bottom",
+   "tee": false,
+   "img": "https://cdn.shopify.com/s/files/1/0622/5503/8681/files/1_153b3d61-15eb-42b8-88b9-f47035dc2372.png?v=1756334343",
+   "handle": "great-neck-cathedral-parachutes",
+   "available": true
+  },
+  {
+   "id": "deathnoise-xxx-tour-hoodie",
+   "name": "Deathnoise XXX Tour Hoodie",
+   "price": "$120",
+   "cat": "clothing",
+   "slot": "top",
+   "tee": false,
+   "img": "https://cdn.shopify.com/s/files/1/0622/5503/8681/files/4.1.jpg?v=1763248412",
+   "handle": "deathnoise-xxx-tour-hoodie",
+   "available": true
+  },
+  {
+   "id": "warcrimes-trompe-denim",
+   "name": "Warcrimes Trompe Denim",
+   "price": "$120",
+   "cat": "clothing",
+   "slot": "bottom",
+   "tee": false,
+   "img": "https://cdn.shopify.com/s/files/1/0622/5503/8681/files/3.8.jpg?v=1763249126",
+   "handle": "warcrimes-trompe-denim",
+   "available": true
+  },
+  {
+   "id": "sparrow-denim",
+   "name": "Sparrow Denim",
+   "price": "$150",
+   "cat": "clothing",
+   "slot": "bottom",
+   "tee": false,
+   "img": "https://cdn.shopify.com/s/files/1/0622/5503/8681/files/3.1.jpg?v=1763248934",
+   "handle": "sparrow-denim",
+   "available": true
+  },
+  {
+   "id": "deadfall-waxed-denim",
+   "name": "Deadfall Waxed Denim",
+   "price": "$150",
+   "cat": "clothing",
+   "slot": "bottom",
+   "tee": false,
+   "img": "https://cdn.shopify.com/s/files/1/0622/5503/8681/files/1_ed0f14cd-7e31-408f-a3cf-01b6c0d831b2.png?v=1744044261",
+   "handle": "deadfall-waxed-denim",
+   "available": true
+  },
+  {
+   "id": "carcinogen-tee",
+   "name": "Carcinogen Tee",
+   "price": "$45",
+   "cat": "clothing",
+   "slot": "top",
+   "tee": true,
+   "img": "https://cdn.shopify.com/s/files/1/0622/5503/8681/files/1.jpg?v=1763248306",
+   "handle": "carcinogen-tee",
+   "available": true
+  },
+  {
+   "id": "outlaw-riveted-denim-preorder",
+   "name": "Outlaw Riveted Denim",
+   "price": "$220",
+   "cat": "clothing",
+   "slot": "bottom",
+   "tee": false,
+   "img": "https://cdn.shopify.com/s/files/1/0622/5503/8681/files/2.1_97c2e187-c92a-438a-9abe-2192813e11e8.jpg?v=1763248716",
+   "handle": "outlaw-riveted-denim-preorder",
+   "available": true
+  },
+  {
+   "id": "biker-waxed-denim",
+   "name": "Biker Waxed Denim",
+   "price": "$145",
+   "cat": "clothing",
+   "slot": "bottom",
+   "tee": false,
+   "img": "https://cdn.shopify.com/s/files/1/0622/5503/8681/files/IMG_2831_9fd44661-b50f-44e9-9494-4389a2b2e04f.jpg?v=1763247996",
+   "handle": "biker-waxed-denim",
+   "available": true
+  },
+  {
+   "id": "sacra-cintola-sheepskin-belt-white",
+   "name": "Sacra Cintola Sheepskin Belt (White)",
+   "price": "$85",
+   "cat": "smith",
+   "slot": "belt",
+   "tee": false,
+   "img": "https://cdn.shopify.com/s/files/1/0622/5503/8681/files/14_a62aa947-19a1-4b41-a3e5-d720d09bf7d7.png?v=1771909059",
+   "handle": "sacra-cintola-sheepskin-belt-white",
+   "available": true
+  },
+  {
+   "id": "blaire-hoodie-blanc",
+   "name": "Blaire Hoodie (Blanc)",
+   "price": "$150",
+   "cat": "clothing",
+   "slot": "top",
+   "tee": false,
+   "img": "https://cdn.shopify.com/s/files/1/0622/5503/8681/files/Sq1_54b52ceb-8705-4170-b15f-bbcf6e558788.png?v=1771737891",
+   "handle": "blaire-hoodie-blanc",
+   "available": true
+  },
+  {
+   "id": "blaire-hoodie-noire",
+   "name": "Blaire Hoodie (Noire)",
+   "price": "$150",
+   "cat": "clothing",
+   "slot": "top",
+   "tee": false,
+   "img": "https://cdn.shopify.com/s/files/1/0622/5503/8681/files/Sq3_bb7160a8-9de7-41fe-bd7d-36fabbf0f30d.png?v=1771737849",
+   "handle": "blaire-hoodie-noire",
+   "available": true
+  },
+  {
+   "id": "tourism-beanie",
+   "name": "Tourism Beanie",
+   "price": "$47",
+   "cat": "smith",
+   "slot": "hat",
+   "kind": "beanie",
+   "tee": false,
+   "img": "https://cdn.shopify.com/s/files/1/0622/5503/8681/files/TourismBeanie2.png?v=1768895478",
+   "handle": "tourism-beanie",
+   "available": true
+  },
+  {
+   "id": "pig-bharma-beanie",
+   "name": "Pig Bharma Beanie",
+   "price": "$47",
+   "cat": "smith",
+   "slot": "hat",
+   "kind": "beanie",
+   "tee": false,
+   "img": "https://cdn.shopify.com/s/files/1/0622/5503/8681/files/PigBharmaBeanie2.png?v=1768895176",
+   "handle": "pig-bharma-beanie",
+   "available": true
+  },
+  {
+   "id": "mood-swings-beanie",
+   "name": "Mood Swings Beanie",
+   "price": "$47",
+   "cat": "smith",
+   "slot": "hat",
+   "kind": "beanie",
+   "tee": false,
+   "img": "https://cdn.shopify.com/s/files/1/0622/5503/8681/files/MoodswingsBeanie2.png?v=1768895006",
+   "handle": "mood-swings-beanie",
+   "available": true
+  },
+  {
+   "id": "tommy-boxer-brief-3-pack",
+   "name": "Tommy Boxer Brief (3 Pack)",
+   "price": "$40",
+   "cat": "clothing",
+   "slot": "under",
+   "tee": false,
+   "img": "https://cdn.shopify.com/s/files/1/0622/5503/8681/files/Untitled-1.png?v=1763249081",
+   "handle": "tommy-boxer-brief-3-pack",
+   "available": true
+  }
+ ]
+}

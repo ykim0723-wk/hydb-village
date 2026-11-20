@@ -1,0 +1,7 @@
+{
+  "name": "hydb-village",
+  "private": true,
+  "type": "module",
+  "scripts": { "build": "node scripts/fetch-assets.mjs" },
+  "engines": { "node": ">=20" }
+}
