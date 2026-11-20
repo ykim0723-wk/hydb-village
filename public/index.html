@@ -121,7 +121,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 const SHOP_URL = 'https://haveyoudiedbefore.online';
 const PHASE_SECONDS = 600;       // 10 minutes of day, 10 minutes of night
 let CATALOG = [];   // loaded live from the store at boot (/api/catalog), with a bundled fallback
-const MODELS = { witch:'/models/witch.glb', smith:'/models/blacksmith.glb', barkeep:'/models/barkeep.glb', innkeeper:'/models/innkeeper.glb' };
+const MODELS = { witch:'models/witch.glb', smith:'models/blacksmith.glb', barkeep:'models/barkeep.glb', innkeeper:'models/innkeeper.glb' };
 
 /* ============================== BASICS ============================== */
 const $ = (s)=>document.querySelector(s);
@@ -508,14 +508,18 @@ function updateSparks(dt){ const o=forgeSparks.origin; if(!o) return; const arr=
 /* ============================== CATALOG ============================== */
 async function loadCatalog(){
   let data=null;
-  for(const u of ['/api/catalog','/catalog.fallback.json']){ try{ const r=await fetch(u); if(r.ok){ const j=await r.json(); if(j.products && j.products.length){ data=j; break; } } }catch(e){} }
+  for(const u of ['/api/catalog','catalog.fallback.json']){ try{ const r=await fetch(u); if(r.ok){ const j=await r.json(); if(j.products && j.products.length){ data=j; break; } } }catch(e){} }
   CATALOG=(data?data.products:[]).filter(p=>p.available!==false);
   await Promise.race([ Promise.all(CATALOG.map(sampleColor)), new Promise(r=>setTimeout(r,4000)) ]);
 }
 const imgUrl=(u,w)=>u ? u+(u.includes('?')?'&':'?')+'width='+w : '';
+function guessColor(n){ n=(n||'').toLowerCase();
+  const t=[[/blanc|white|bone/,'#e6e1d6'],[/noire|black|blackwater|deadfall|biker/,'#1c1b1b'],[/waxed/,'#26231f'],[/grit|creek|dustfall/,'#6f7d8c'],[/denim|sparrow|industry|outlaw|warcrimes/,'#3b4a63'],
+    [/cargo|exmilitant/,'#4a4a36'],[/parachute/,'#2f2f30'],[/tee/,'#2a2826'],[/hoodie/,'#262424'],[/boxer|brief/,'#2d3a5a'],[/beanie/,'#1d1d1d'],[/belt/,'#e8e3d8']];
+  for(const [re,c] of t) if(re.test(n)) return c; return '#3a3530'; }
 // pull a garment colour out of the product photo, ignoring the background
 function sampleColor(it){
-  it.color=it.color||'#3a3530'; it.trim='#e9e1cf'; if(!it.img) return;
+  it.color=it.color||guessColor(it.name); it.trim='#e9e1cf'; if(!it.img) return;
   return new Promise(res=>{ const im=new Image(); im.crossOrigin='anonymous';
     im.onload=()=>{ try{ const N=40, c=document.createElement('canvas'); c.width=c.height=N; const g=c.getContext('2d'); g.drawImage(im,0,0,N,N); const d=g.getImageData(0,0,N,N).data;
       const px=(x,y)=>{ const o=(y*N+x)*4; return [d[o],d[o+1],d[o+2],d[o+3]]; }; const cs=[px(1,1),px(N-2,1),px(1,N-2),px(N-2,N-2)]; const bg=[0,1,2].map(k=>cs.reduce((a,c)=>a+c[k],0)/4);
@@ -1043,12 +1047,17 @@ const ov=$('#ov'), panel=$('#panel');
 function openPanel(html){ panel.innerHTML='<button class="close" id="pClose">✕</button>'+html; ov.classList.add('on'); uiOpen=true; $('#pClose').onclick=closePanel; }
 function closePanel(){ ov.classList.remove('on'); uiOpen=false; }
 ov.addEventListener('pointerdown',(e)=>{ if(e.target===ov) closePanel(); });
+let imgBlocked=false;
+window.__imgFail=(el,id)=>{ imgBlocked=true; const it=item(id); if(it && el.parentNode){ const w=document.createElement('span'); w.innerHTML=drawnSwatch(it); el.parentNode.replaceChild(w.firstChild,el); } };
+function drawnSwatch(it){ const keep=it.img; it.img=''; const h=swatch(it); it.img=keep; return h; }
 function swatch(it){
-  if(it.img) return `<img src="${imgUrl(it.img,360)}" alt="" loading="lazy">`;
+  if(it.img && !imgBlocked) return `<img src="${imgUrl(it.img,360)}" alt="" loading="lazy" onerror="window.__imgFail&&window.__imgFail(this,'${it.id}')">`;
   const c=it.color, t=it.trim||'#e9e1cf';
   if(it.slot==='top') return `<svg viewBox="0 0 120 100" width="110"><path d="M38 14 L22 22 L6 52 L18 58 L28 40 L28 92 L92 92 L92 40 L102 58 L114 52 L98 22 L82 14 Q60 ${it.tee?20:2} 38 14Z" fill="${c}" stroke="#000" stroke-opacity=".4"/>${it.tee?'':`<path d="M42 14 Q60 34 78 14" fill="none" stroke="#000" stroke-opacity=".35" stroke-width="3"/>`}<text x="60" y="54" font-family="UnifrakturMaguntia" font-size="13" text-anchor="middle" fill="${t}">HYDB</text></svg>`;
   if(it.slot==='bottom') return `<svg viewBox="0 0 120 100" width="100"><path d="M34 6 H86 L92 94 H66 L60 40 L54 94 H28 Z" fill="${c}" stroke="#000" stroke-opacity=".4"/></svg>`;
   if(it.slot==='hat') return it.kind==='beanie' ? `<svg viewBox="0 0 120 100" width="100"><path d="M24 70 Q24 18 60 18 Q96 18 96 70Z" fill="${c}"/><rect x="20" y="62" width="80" height="18" fill="${c}" stroke="#fff" stroke-opacity=".08"/></svg>` : `<svg viewBox="0 0 120 100" width="104"><path d="M26 64 Q26 22 62 22 Q94 22 94 64Z" fill="${c}"/><path d="M80 60 Q112 60 114 70 L82 70Z" fill="${c}"/><text x="60" y="52" font-family="UnifrakturMaguntia" font-size="14" text-anchor="middle" fill="#e9e1cf">H</text></svg>`;
+  if(it.slot==='under') return `<svg viewBox="0 0 120 100" width="96"><path d="M22 24 H98 L94 70 Q78 74 70 60 L60 56 L50 60 Q42 74 26 70 Z" fill="${c}"/><rect x="22" y="20" width="76" height="10" fill="#e9e1cf"/></svg>`;
+  if(it.slot==='belt') return `<svg viewBox="0 0 120 100" width="110"><rect x="6" y="42" width="108" height="16" rx="3" fill="${c}" stroke="#000" stroke-opacity=".3"/><rect x="50" y="38" width="22" height="24" rx="3" fill="none" stroke="#bdbdbd" stroke-width="4"/></svg>`;
   if(it.slot==='neck') return `<svg viewBox="0 0 120 100" width="96"><path d="M28 18 Q60 92 92 18" fill="none" stroke="${c}" stroke-width="4" stroke-dasharray="5 3"/><rect x="54" y="62" width="12" height="20" fill="${c}"/><rect x="50" y="66" width="20" height="5" fill="${c}"/></svg>`;
   return `<svg viewBox="0 0 120 100" width="80"><circle cx="60" cy="56" r="22" fill="none" stroke="${c}" stroke-width="8"/><circle cx="60" cy="30" r="10" fill="${c}"/></svg>`;
 }
